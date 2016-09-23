@@ -1,5 +1,5 @@
 // TODO: Load events from a MongoDB :)
-export const Events = [{
+const events = [{
   eventId: 1,
   name: 'My Birthday',
   type: 'Party'
@@ -20,3 +20,5 @@ export const Events = [{
   name: 'Stats 201',
   type: 'Class'
 }]
+
+module.exports = events

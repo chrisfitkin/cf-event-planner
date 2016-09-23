@@ -31,7 +31,7 @@ const ACTION_HANDLERS = {
 // Reducer
 // ------------------------------------
 // console.log(Events)
-const initialState = { eventList : Events }
+const initialState = { events : Events }
 export default function counterReducer (state = initialState, action) {
   const handler = ACTION_HANDLERS[action.type]
 

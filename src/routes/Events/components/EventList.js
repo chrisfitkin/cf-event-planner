@@ -21,9 +21,9 @@ Optional message to the guests with additional information about the event
 export const EventList = props => {
   console.log('props');
   console.log(props);
-  const events = renderEvents(props.eventList.events)
+  const events = renderEvents(props.events.events)
   // TODO: find out why events is double nested and rafactor
-  // to props.eventList.events
+  // to props.events.events
 
   return (
     <section>
@@ -73,7 +73,7 @@ const renderEvent = event => (
 )
 
 EventList.propTypes = {
-  eventList      : React.PropTypes.array.isRequired
+  events      : React.PropTypes.object.isRequired
 }
 
 export default EventList
