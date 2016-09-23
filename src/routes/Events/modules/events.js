@@ -8,8 +8,6 @@ export const CREATE_EVENT = 'CREATE_EVENT'
 // ------------------------------------
 export function createEvent (value = 1) {
   console.log('createEvent')
-  console.log('state')
-  console.log(state)
   let eventTitle = 'another event'
   return {
     type    : CREATE_EVENT,
@@ -32,7 +30,13 @@ const ACTION_HANDLERS = {
     console.log(state)
     console.log('action')
     console.log(action)
-    return {...state, events: ['this event added'] }
+    let newState = {
+      events: state.events.concat('this event added')
+    }
+    console.log('newState')
+    console.log(newState)
+    return newState
+    // return {...state, newState }
   }
 }
 
@@ -49,7 +53,8 @@ export default function eventsReducer (state = initialState, action) {
   console.log('action.type')
   console.log(action.type)
 
-  const handler = ACTION_HANDLERS[action.type]
+  // const handler = ACTION_HANDLERS[action.type]
+  const handler = ACTION_HANDLERS[CREATE_EVENT]
 
   return handler ? handler(state, action) : state
 }
