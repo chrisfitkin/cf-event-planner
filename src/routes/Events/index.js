@@ -10,15 +10,15 @@ export default (store) => ({
       /*  Webpack - use require callback to define
           dependencies for bundling   */
       const EventList = require('./containers/EventList').default
-      const reducer = require('./modules/events').default
+      const reducer = require('./modules/eventList').default
 
       /*  Add the reducer to the store on key 'counter'  */
-      injectReducer(store, { key: 'events', reducer })
+      injectReducer(store, { key: 'eventList', reducer })
 
       /*  Return getComponent   */
       cb(null, EventList)
 
       /* Webpack named bundle   */
-    }, 'events')
+    }, 'eventList')
   }
 })

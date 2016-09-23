@@ -1,8 +1,8 @@
 // import React, { Component } from 'react'
 import React from 'react'
 // import Event from './Event'
-import { Link } from 'react-router'
-import { Button, IconButton } from 'react-toolbox/lib/button';
+// import { Link } from 'react-router'
+import { Button } from 'react-toolbox/lib/button'
 
 /* Fields:
 Name of the event
@@ -19,9 +19,9 @@ Optional message to the guests with additional information about the event
 /* Uses {} object wrapper instead of () to allow variable declaration
 */
 export const EventList = props => {
-
-
-  const events = renderEvents(props.events.events)
+  console.log('props');
+  console.log(props);
+  const events = renderEvents(props.eventList.events)
   // TODO: find out why events is double nested and rafactor
   // to props.eventList.events
 
@@ -37,7 +37,6 @@ export const EventList = props => {
 }
 
 const renderEvents = events => {
-
   // temporary hardcode events array until we can pull from module/props
   let tempEvents = [{
     _id: 1,
@@ -60,10 +59,7 @@ const renderEvents = events => {
     name: 'Stats 201',
     type: 'Class'
   }]
-  return (
-  // events.map(event => renderEvent(event))
-    tempEvents.map(event => renderEvent(event))
-  )
+
   return (
   events.map(event => renderEvent(event))
   )
@@ -77,7 +73,7 @@ const renderEvent = event => (
 )
 
 EventList.propTypes = {
-  events      : React.PropTypes.array.isRequired
+  eventList      : React.PropTypes.array.isRequired
 }
 
 export default EventList
