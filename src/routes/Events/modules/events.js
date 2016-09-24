@@ -4,6 +4,17 @@
 export const CREATE_EVENT = 'CREATE_EVENT'
 
 // ------------------------------------
+// Default Variables
+// ------------------------------------
+let defaultEvents = [{
+                      _id: 0,
+                      title: "Default Event"
+                    },{
+                      _id: 1,
+                      title: "Second Default Event"
+                    }]
+
+// ------------------------------------
 // Actions
 // ------------------------------------
 export function createEvent (value = 1) {
@@ -25,16 +36,14 @@ export const actions = {
 // ------------------------------------
 const ACTION_HANDLERS = {
   [CREATE_EVENT] : (state, action) => {
-    console.log('CREATE_EVENT')
-    console.log('state')
-    console.log(state)
-    console.log('action')
-    console.log(action)
+    let maxEvent = state.events.reduce((prev, current) => (prev._id > current._id) ? prev : current)
+    let nextId = maxEvent._id + 1
     let newState = {
-      events: state.events.concat('this event added')
+      events: state.events.concat({
+        _id: nextId,
+        title: "Added Event"
+      })
     }
-    console.log('newState')
-    console.log(newState)
     return newState
     // return {...state, newState }
   }
@@ -43,15 +52,8 @@ const ACTION_HANDLERS = {
 // ------------------------------------
 // Reducer
 // ------------------------------------
-const initialState = { events: ['default event', 'second default event'] }
+const initialState = { events: defaultEvents }
 export default function eventsReducer (state = initialState, action) {
-  console.log('eventsReducer');
-  console.log('state')
-  console.log(state)
-  console.log('action')
-  console.log(action)
-  console.log('action.type')
-  console.log(action.type)
 
   // const handler = ACTION_HANDLERS[action.type]
   const handler = ACTION_HANDLERS[CREATE_EVENT]
