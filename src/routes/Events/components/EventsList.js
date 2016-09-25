@@ -38,7 +38,7 @@ export const EventsList = (props) => {
       <div className='event-list__wrapper'>
       <ReactCSSTransitionGroup
           transitionName="example"
-          transitionEnterTimeout={500}
+          transitionEnterTimeout={3000}
           transitionLeaveTimeout={300}>
         {events}
       </ReactCSSTransitionGroup>

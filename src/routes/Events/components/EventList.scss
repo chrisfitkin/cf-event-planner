@@ -3,3 +3,29 @@
   padding-bottom: 20px;
   border-bottom: 1px solid #efefef;
 }
+
+
+
+.example-enter {
+  opacity: 0.01;
+  max-height: 0px;
+  background-color: #e1f5fe;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  max-height: 100px;
+  background-color: transparent;
+  transition: all 500ms ease-in, background-color 3000ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+  max-height: 100px;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  max-height: 0px;
+  transition: all 300ms ease-in;
+}
