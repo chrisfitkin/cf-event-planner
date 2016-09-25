@@ -59,7 +59,6 @@ EventsList.propTypes = {
 }
 
 Event.propTypes = {
-  eventsList : React.PropTypes.object.isRequired,
   title : React.PropTypes.string.isRequired
 }
 
