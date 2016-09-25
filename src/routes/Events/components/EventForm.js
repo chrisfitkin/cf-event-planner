@@ -64,17 +64,14 @@ export const EventForm = (props) => {
         </label>
         <label>
           <span>When is the event</span>
-          <input
+          <DatePicker
+            autoOk
             type="text"
-            name='host'
+            name='startDate'
             ref={ref => { startDate = ref }}
-            className="form-control"
-            placeholder={todayFormatted}
-            />
+            hintText={todayFormatted}
+          />
         </label>
-        <DatePicker
-          hintText="Portrait Dialog"
-        />
         <br/>
         <button className='btn btn-default' type="submit">
           Add Event
