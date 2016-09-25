@@ -1,7 +1,8 @@
 import React from 'react'
 import {Button} from 'react-toolbox/lib/button';
 import moment from 'moment';
-import DatePicker from 'react-toolbox/lib/date_picker';
+// import DatePicker from 'react-toolbox/lib/date_picker';
+import DatePicker from 'material-ui/DatePicker';
 
 // Check this out for submit handling
 // https://github.com/chrisfitkin/react-redux-blog/blob/master/public/src/components/PostsForm.js
@@ -72,7 +73,7 @@ export const EventForm = (props) => {
             />
         </label>
         <DatePicker
-          label='Birthdate'
+          hintText="Portrait Dialog"
         />
         <br/>
         <button className='btn btn-default' type="submit">
