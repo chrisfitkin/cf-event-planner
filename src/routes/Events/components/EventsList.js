@@ -1,5 +1,8 @@
 import React from 'react'
 import {Button} from 'react-toolbox/lib/button';
+import {EventForm} from './EventForm';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import './EventList.scss'
 
 const Event = (props) => {
   return (
@@ -30,25 +33,15 @@ export const EventsList = (props) => {
   return (
     <div style={{ margin: '0 auto' }} >
       <h2>Event List:</h2>
-      <form onSubmit={e => {
-        e.preventDefault()
-        if (!input.value.trim()) {
-          return
-        }
-        props.createEvent(input.value)
-        input.value = ''
-        input.focus()
-      }}>
-        <input ref={node => {
-          input = node
-        }} type="text" className="form-control" placeholder="Need to wire this textfield to submit handler..." />
-        <button className='btn btn-default' type="submit">
-          Add Event
-        </button>
-      </form>
+      <EventForm {...props} />
       <hr/>
-      <div>
+      <div className='event-list__wrapper'>
+      <ReactCSSTransitionGroup
+          transitionName="example"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={300}>
         {events}
+      </ReactCSSTransitionGroup>
       </div>
     </div>
   )

@@ -19,6 +19,6 @@ export default (store) => ({
       cb(null, EventsList)
 
     /* Webpack named bundle   */
-  }, 'events')
+    }, 'events')
   }
 })
