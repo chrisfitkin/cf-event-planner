@@ -1,8 +1,10 @@
 import React from 'react'
-import {Button} from 'react-toolbox/lib/button';
-import moment from 'moment';
+import { Button } from 'react-toolbox/lib/button'
+import moment from 'moment'
 // import DatePicker from 'react-toolbox/lib/date_picker';
-import DatePicker from 'material-ui/DatePicker';
+import TextField from 'material-ui/TextField'
+import DatePicker from 'material-ui/DatePicker'
+import TimePicker from 'material-ui/TimePicker'
 
 // Check this out for submit handling
 // https://github.com/chrisfitkin/react-redux-blog/blob/master/public/src/components/PostsForm.js
@@ -21,15 +23,14 @@ export const EventForm = (props) => {
         title.value = ''
         title.focus()
       }}>
-        <label>
-          <span>Name of your event</span>
-          <input type="text" autoFocus className="form-control" required
-            ref={ref => { title = ref }}
-            name='title'
-            placeholder="A day at the beach"
-            autoComplete="title"
-            />
-        </label>
+        <TextField
+          hintText="A day at the beach"
+          floatingLabelText="Name of your event"
+          autoComplete="title"
+          autoFocus
+          required
+          ref={ref => { title = ref}}
+        />
         <label>
           <span>Type of event</span>
           <input
@@ -62,16 +63,38 @@ export const EventForm = (props) => {
             autoComplete="name"
             />
         </label>
-        <label>
-          <span>When is the event</span>
-          <DatePicker
-            autoOk
-            type="text"
-            name='startDate'
-            ref={ref => { startDate = ref }}
-            hintText={todayFormatted}
-          />
-        </label>
+        <DatePicker
+          autoOk
+          floatingLabelText="When is your event"
+          type="text"
+          name='startDate'
+          ref={ref => { startDate = ref }}
+          hintText={todayFormatted}
+        />
+        <TimePicker
+          hintText="12hr Format"
+          autoOk
+          name="startTime"
+          ref={ref => { startTime = ref }}
+          hintText="12:00 pm"
+          format="ampm"
+        />
+        <DatePicker
+          autoOk
+          floatingLabelText="When does it end"
+          type="text"
+          name='endDate'
+          ref={ref => { endDate = ref }}
+          hintText={todayFormatted}
+        />
+        <TimePicker
+          hintText="12hr Format"
+          autoOk
+          name="endTime"
+          ref={ref => { endTime = ref }}
+          hintText="12:00 pm"
+          format="ampm"
+        />
         <br/>
         <button className='btn btn-default' type="submit">
           Add Event
