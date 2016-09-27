@@ -19,3 +19,8 @@ body {
 *:after {
   box-sizing: inherit;
 }
+
+// http://stackoverflow.com/questions/39254721/material-ui-reactjs-menu-component-style-is-broken
+[type=button]{
+  -webkit-appearance: none !important;
+}
