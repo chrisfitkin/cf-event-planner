@@ -14,7 +14,7 @@ import EventsList from '../components/EventForm'
 
 const mapDispatchToProps =  (dispatch, ownProps) => {
     return ({
-      createEvent: (title) => dispatch(createEvent(title))
+      createEvent: (title) => dispatch(createEvent(ownProps.title))
     })
 }
 
