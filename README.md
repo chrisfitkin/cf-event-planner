@@ -2,6 +2,9 @@
 
 by [@chrisfitkin](http://twitter.com/chrisfitkin)
 
+### To Start
+
+> npm start
 
 ## BUG: React-addons version icompatibility :(
 
